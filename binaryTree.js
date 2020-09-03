@@ -5,20 +5,20 @@ class Node {
       this.right = null;
     }
   }
-  
-  
-  
-  
-  class BST {
+
+class BST {
+   
     constructor() {
-      this.root = null;
+        this.root = null;
     }
+
     add(data) {
       let node = this.root;
+     
       if (node === null) {
         this.root = new Node(data);
       } else {
-        const searchTree = function(node) {
+        const insertTree = function(node) {
           if (data < node.data) {
             if (node.left === null) {
               node.left = new Node(data);
@@ -33,7 +33,7 @@ class Node {
             }
           } 
         } //end function
-        return searchTree(node);
+        return insertTree(node);
       }//end else
     }//end add method
   }
@@ -43,4 +43,8 @@ class Node {
   bst.add(15)
   bst.add(10)
   bst.add(50)
-  console.log(bst)
+  bst.add(75)
+  bst.add(10)
+  bst.add(7)
+  console.log(bst.root)
+  console.log(bst.root.left.left)
